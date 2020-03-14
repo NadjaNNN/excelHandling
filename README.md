@@ -1,8 +1,22 @@
-# Excel files handling #
+# Easy Excel files handling #
 
 Library was done to simplify Excel files handling based on `org.apache.poi`.
 Both file types are supported: "Excel 97-2004 Workbook (.xls)" and "Excel Workbook (.xlsx)".
 
+### Download ###
+
+Get Easy Excel files handling library via Maven:
+```
+<dependency>
+    <groupId>io.github.nadjannn</groupId>
+    <artifactId>excelHandling</artifactId>
+    <version>1.0</version>
+</dependency>
+```
+or Gradle:
+```
+compile group: 'io.github.nadjannn', name: 'excelHandling', version: '1.0'
+```
 ### Build requirements ###
 
 * Java 8 (1.8.0_181) or higher
