@@ -1,8 +1,8 @@
-package com.poi.integration.examples;
+package io.github.nadjannn.examples;
 
-import com.poi.integration.ExcelFile;
-import com.poi.integration.ExcelFileFactory;
-import com.poi.integration.HandlingType;
+import io.github.nadjannn.ExcelFile;
+import io.github.nadjannn.ExcelFileFactory;
+import io.github.nadjannn.HandlingType;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

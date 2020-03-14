@@ -17,8 +17,8 @@ try (ExcelFile excelFile = ExcelFileFactory.openExcelFile("fileName.xlsx", Handl
   String text = excelFile.getCellValueString(0, 0);
 }
 ```
-`com.poi.integration.ExcelFile` extends from `java.lang.AutoCloseable`, so, explicit closing is not needed and workbook will be closed when program is finished with excel file.    
-See more examples in folder `src/main/java/com/poi/integration/examples`.
+`io.github.nadjannn.ExcelFile` extends from `java.lang.AutoCloseable`, so, explicit closing is not needed and workbook will be closed when program is finished with excel file.    
+See more examples in folder `src/main/java/io/github/nadjannn/examples`.
 
 ### How to write into Excel file ###
 
@@ -29,7 +29,7 @@ try (ExcelFile excelFile = ExcelFileFactory.openExcelFile("fileName.xlsx", Handl
   excelFile.setCellValueString(0, 0, "some text");
 }
 ```
-See more examples in folder `src/main/java/com/poi/integration/examples`.
+See more examples in folder `src/main/java/io/github/nadjannn/examples`.
 
 ### License ###
 

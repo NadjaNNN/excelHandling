@@ -1,9 +1,9 @@
-package com.poi.integration.hssf;
+package io.github.nadjannn.hssf;
 
-import com.poi.integration.ExcelFile;
-import com.poi.integration.ExcelFileAbstract;
-import com.poi.integration.ExcelHandlingException;
-import com.poi.integration.HandlingType;
+import io.github.nadjannn.ExcelFile;
+import io.github.nadjannn.ExcelFileAbstract;
+import io.github.nadjannn.ExcelHandlingException;
+import io.github.nadjannn.HandlingType;
 import org.apache.poi.hssf.usermodel.HSSFDataValidationHelper;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;

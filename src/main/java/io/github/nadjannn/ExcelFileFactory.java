@@ -1,7 +1,7 @@
-package com.poi.integration;
+package io.github.nadjannn;
 
-import com.poi.integration.hssf.HSSFExcelFile;
-import com.poi.integration.xssf.XSSFExcelFile;
+import io.github.nadjannn.hssf.HSSFExcelFile;
+import io.github.nadjannn.xssf.XSSFExcelFile;
 import org.apache.commons.lang3.StringUtils;
 
 /**

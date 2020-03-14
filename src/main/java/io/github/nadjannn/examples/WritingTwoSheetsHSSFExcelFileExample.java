@@ -1,9 +1,9 @@
-package com.poi.integration.examples;
+package io.github.nadjannn.examples;
 
-import com.poi.integration.ExcelFile;
-import com.poi.integration.hssf.HSSFExcelFile;
-import com.poi.integration.ExcelFileFactory;
-import com.poi.integration.HandlingType;
+import io.github.nadjannn.ExcelFile;
+import io.github.nadjannn.hssf.HSSFExcelFile;
+import io.github.nadjannn.ExcelFileFactory;
+import io.github.nadjannn.HandlingType;
 
 public class WritingTwoSheetsHSSFExcelFileExample {
 

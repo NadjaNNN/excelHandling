@@ -1,9 +1,9 @@
-package com.poi.integration;
+package io.github.nadjannn;
 
 import static org.junit.Assert.assertTrue;
 
-import com.poi.integration.xssf.XSSFExcelFile;
-import com.poi.integration.hssf.HSSFExcelFile;
+import io.github.nadjannn.xssf.XSSFExcelFile;
+import io.github.nadjannn.hssf.HSSFExcelFile;
 import org.junit.Test;
 
 public class ExcelFileFactoryTest {
