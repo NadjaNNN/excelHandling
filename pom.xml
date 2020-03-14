@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.poi.integration</groupId>
+    <groupId>io.github.nadjannn</groupId>
     <artifactId>excelHandling</artifactId>
     <packaging>jar</packaging>
     <version>1.0-SNAPSHOT</version>
