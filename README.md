@@ -18,7 +18,7 @@ try (ExcelFile excelFile = ExcelFileFactory.openExcelFile("fileName.xlsx", Handl
 }
 ```
 `io.github.nadjannn.ExcelFile` extends from `java.lang.AutoCloseable`, so, explicit closing is not needed and workbook will be closed when program is finished with excel file.    
-See more examples in folder `src/main/java/io/github/nadjannn/examples`.
+See more examples in folder `src/main/java/io/github/nadjannn/excel/handling/examples`.
 
 ### How to write into Excel file ###
 
@@ -29,7 +29,7 @@ try (ExcelFile excelFile = ExcelFileFactory.openExcelFile("fileName.xlsx", Handl
   excelFile.setCellValueString(0, 0, "some text");
 }
 ```
-See more examples in folder `src/main/java/io/github/nadjannn/examples`.
+See more examples in folder `src/main/java/io/github/nadjannn/excel/handling/examples`.
 
 ### License ###
 

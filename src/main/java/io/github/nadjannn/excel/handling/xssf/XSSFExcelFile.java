@@ -1,9 +1,9 @@
-package io.github.nadjannn.xssf;
+package io.github.nadjannn.excel.handling.xssf;
 
-import io.github.nadjannn.ExcelFile;
-import io.github.nadjannn.ExcelFileAbstract;
-import io.github.nadjannn.ExcelHandlingException;
-import io.github.nadjannn.HandlingType;
+import io.github.nadjannn.excel.handling.ExcelFile;
+import io.github.nadjannn.excel.handling.ExcelFileAbstract;
+import io.github.nadjannn.excel.handling.ExcelHandlingException;
+import io.github.nadjannn.excel.handling.HandlingType;
 import org.apache.poi.ss.usermodel.DataValidationHelper;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;

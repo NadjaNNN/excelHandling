@@ -1,9 +1,9 @@
-package io.github.nadjannn;
+package io.github.nadjannn.excel.handling;
 
 import static org.junit.Assert.assertTrue;
 
-import io.github.nadjannn.xssf.XSSFExcelFile;
-import io.github.nadjannn.hssf.HSSFExcelFile;
+import io.github.nadjannn.excel.handling.xssf.XSSFExcelFile;
+import io.github.nadjannn.excel.handling.hssf.HSSFExcelFile;
 import org.junit.Test;
 
 public class ExcelFileFactoryTest {

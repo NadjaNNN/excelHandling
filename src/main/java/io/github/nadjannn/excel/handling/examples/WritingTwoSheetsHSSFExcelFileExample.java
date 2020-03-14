@@ -1,9 +1,9 @@
-package io.github.nadjannn.examples;
+package io.github.nadjannn.excel.handling.examples;
 
-import io.github.nadjannn.ExcelFile;
-import io.github.nadjannn.hssf.HSSFExcelFile;
-import io.github.nadjannn.ExcelFileFactory;
-import io.github.nadjannn.HandlingType;
+import io.github.nadjannn.excel.handling.ExcelFile;
+import io.github.nadjannn.excel.handling.HandlingType;
+import io.github.nadjannn.excel.handling.hssf.HSSFExcelFile;
+import io.github.nadjannn.excel.handling.ExcelFileFactory;
 
 public class WritingTwoSheetsHSSFExcelFileExample {
 

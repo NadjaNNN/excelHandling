@@ -1,4 +1,4 @@
-package io.github.nadjannn;
+package io.github.nadjannn.excel.handling;
 
 /**
  * Enumeration to determine read or write operation.
