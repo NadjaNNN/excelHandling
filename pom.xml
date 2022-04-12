@@ -6,7 +6,7 @@
 	<groupId>io.github.nadjannn</groupId>
 	<artifactId>excelHandling</artifactId>
 	<packaging>jar</packaging>
-	<version>1.1-SNAPSHOT</version>
+	<version>1.1</version>
 
 	<name>Easy Excel files handling</name>
 	<description>Library for easy Excel files handling</description>
@@ -22,7 +22,7 @@
 		<connection>scm:git:git://github.com/NadjaNNN/excelHandling.git</connection>
 		<developerConnection>scm:git:git@github.com:NadjaNNN/excelHandling.git</developerConnection>
 		<url>https://github.com/NadjaNNN/excelHandling</url>
-		<tag>HEAD</tag>
+		<tag>excelHandling-1.1</tag>
 	</scm>
 
 	<licenses>
