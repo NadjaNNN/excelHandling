@@ -8,8 +8,10 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Optional;
 
-import static org.junit.Assert.*;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 public abstract class ExcelFileReadingTest {
 
@@ -187,4 +189,28 @@ public abstract class ExcelFileReadingTest {
         assertFalse(excelFile.getExcelRow(100).isPresent());
     }
 
+    @Test
+    public void getFileNameShouldNotBeEmpty() {
+        assertFalse(excelFile.getFileName().isEmpty());
+    }
+
+    @Test
+    public void getHandlingTypeShouldBeRead() {
+        assertEquals(HandlingType.READ, excelFile.getHandlingType());
+    }
+
+    @Test
+    public void getWorkbookShouldNotBeNull() {
+        assertNotNull(excelFile.getWorkbook());
+    }
+
+    @Test
+    public void getCurrentSheetShouldNotBeNull() {
+        assertNotNull(excelFile.getCurrentSheet());
+    }
+
+    @Test
+    public void getCurrentSheetIndexShouldBeZero() {
+        assertEquals(0, excelFile.getCurrentSheetIndex());
+    }
 }

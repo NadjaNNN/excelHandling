@@ -2,6 +2,8 @@ package io.github.nadjannn.excel.handling;
 
 import org.apache.poi.ss.usermodel.DateUtil;
 import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
 
 import java.util.Date;
 import java.util.List;
@@ -187,4 +189,38 @@ public interface ExcelFile extends AutoCloseable {
     @Override
     void close() throws ExcelClosingException;
 
+    /**
+     * Returns file name of current processing file
+     *
+     * @return String value of processing file
+     */
+    String getFileName();
+
+    /**
+     * Returns handling type of current processing profile. It can be read or write.
+     *
+     * @return handling type
+     */
+    HandlingType getHandlingType();
+
+    /**
+     * Returns workbook object.
+     *
+     * @return Workbook object
+     */
+    Workbook getWorkbook();
+
+    /**
+     * Returns current processing sheet
+     *
+     * @return Sheet with current processing sheet
+     */
+    Sheet getCurrentSheet();
+
+    /**
+     * Returns current processing sheet index, numeration is staring from zero
+     *
+     * @return int value of current sheet index
+     */
+    int getCurrentSheetIndex();
 }
