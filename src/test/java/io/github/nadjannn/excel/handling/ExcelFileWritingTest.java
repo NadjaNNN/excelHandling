@@ -11,6 +11,7 @@ import java.util.function.Consumer;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
 
 public abstract class ExcelFileWritingTest {
 
@@ -81,7 +82,7 @@ public abstract class ExcelFileWritingTest {
 
     @Test
     public void addingANewSheetShouldBeSuccessful() throws Exception {
-        updateFile(excelFile -> excelFile.addAndLoadSheet());
+        applyToFile(excelFile -> excelFile.addAndLoadSheet());
         try (ExcelFile excelFile = ExcelFileFactory.openExcelFile(fileName, HandlingType.READ)) {
             assertEquals(2, excelFile.getSheetsAmount());
         } catch (Exception e) {
@@ -89,7 +90,32 @@ public abstract class ExcelFileWritingTest {
         }
     }
 
-    private void updateFile(Consumer<ExcelFile> consumer) throws Exception {
+    @Test
+    public void getFileNameShouldBeAsInitialised() throws Exception {
+        applyToFile(excelFile -> assertEquals(fileName, excelFile.getFileName()));
+    }
+
+    @Test
+    public void getHandlingTypeShouldBeWrite() throws Exception {
+        applyToFile(excelFile -> assertEquals(HandlingType.WRITE, excelFile.getHandlingType()));
+    }
+
+    @Test
+    public void getWorkbookShouldNotBeNull() throws Exception {
+        applyToFile(excelFile -> assertNotNull(excelFile.getWorkbook()));
+    }
+
+    @Test
+    public void getCurrentSheetShouldNotBeNull() throws Exception {
+        applyToFile(excelFile -> assertNotNull(excelFile.getCurrentSheet()));
+    }
+
+    @Test
+    public void getCurrentSheetIndexShouldBeZero() throws Exception {
+        applyToFile(excelFile -> assertEquals(0, excelFile.getCurrentSheetIndex()));
+    }
+
+    private void applyToFile(Consumer<ExcelFile> consumer) throws Exception {
         try (ExcelFile excelFile = ExcelFileFactory.openExcelFile(fileName, HandlingType.WRITE)) {
             consumer.accept(excelFile);
         } catch (Exception e) {
@@ -98,19 +124,19 @@ public abstract class ExcelFileWritingTest {
     }
 
     private void setStringToFile(String text) throws Exception {
-        updateFile(excelFile -> excelFile.setCellValueString(0, 0, text));
+        applyToFile(excelFile -> excelFile.setCellValueString(0, 0, text));
     }
 
     private void setDoubleToFile(Double value) throws Exception {
-        updateFile(excelFile -> excelFile.setCellValueDouble(0, 0, value));
+        applyToFile(excelFile -> excelFile.setCellValueDouble(0, 0, value));
     }
 
     private void setBooleanToFile(Boolean value) throws Exception {
-        updateFile(excelFile -> excelFile.setCellValueBoolean(0, 0, value));
+        applyToFile(excelFile -> excelFile.setCellValueBoolean(0, 0, value));
     }
 
     private void setDateToFile(Date value) throws Exception {
-        updateFile(excelFile -> excelFile.setCellValueDate(0, 0, value));
+        applyToFile(excelFile -> excelFile.setCellValueDate(0, 0, value));
     }
 
     private <T> Optional<T> getValueFromFile() throws Exception {

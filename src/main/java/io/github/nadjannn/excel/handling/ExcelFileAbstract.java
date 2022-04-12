@@ -145,6 +145,26 @@ public abstract class ExcelFileAbstract {
         sheet.addValidationData(validation);
     }
 
+    public String getFileName() {
+        return fileName;
+    }
+
+    public HandlingType getHandlingType() {
+        return handlingType;
+    }
+
+    public Workbook getWorkbook() {
+        return workbook;
+    }
+
+    public Sheet getCurrentSheet() {
+        return sheet;
+    }
+
+    public int getCurrentSheetIndex() {
+        return sheetIndex;
+    }
+
     protected Optional<Cell> getCell(int rowNumber, int columnNumber, boolean createIfNotExists) {
         if (rowNumber < 0 || columnNumber < 0) {
             throw new ExcelHandlingException("Can not read cell[" + rowNumber + ", " + columnNumber + "]");
