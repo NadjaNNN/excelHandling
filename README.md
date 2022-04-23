@@ -10,7 +10,7 @@ Get Easy Excel files handling library via Maven:
 <dependency>
     <groupId>io.github.nadjannn</groupId>
     <artifactId>excelHandling</artifactId>
-    <version>1.1</version>
+    <version>1.2</version>
 </dependency>
 ```
 or Gradle:

@@ -15,11 +15,18 @@ import java.util.Optional;
 public interface ExcelFile extends AutoCloseable {
 
     /**
-     * Returns number os rows from current loaded sheet.
+     * Returns number of physical rows from current loaded sheet, i.e. empty rows are excluded
      *
      * @return Integer value of rows.
      */
     int getNumberOfRows();
+
+    /**
+     * Returns the latest row index from current loaded sheet. Counting starts from zero.
+     *
+     * @return int value of last row index on current sheet.
+     */
+    int getLastRowNum();
 
     /**
      * Returns columns amount in particular row.
