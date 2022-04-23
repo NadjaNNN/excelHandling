@@ -20,7 +20,7 @@ public class ReadSimpleReport {
         // File will be closed because it extends from java.lang.AutoCloseable.
         try (ExcelFile excelFile = ExcelFileFactory.openExcelFile(fileName, HandlingType.READ)) {
             // Read all rows on the first sheet.
-            for (int row = 1; row < excelFile.getNumberOfRows(); row++) {
+            for (int row = 1; row <= excelFile.getLastRowNum(); row++) {
                 // Integer ID value.
                 Integer id = excelFile.getCellValueDouble(row, 0).map(Double::intValue).orElse(null);
                 // String text.

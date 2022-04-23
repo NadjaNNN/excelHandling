@@ -165,6 +165,10 @@ public abstract class ExcelFileAbstract {
         return sheetIndex;
     }
 
+    public int getLastRowNum() {
+        return sheet.getLastRowNum();
+    }
+
     protected Optional<Cell> getCell(int rowNumber, int columnNumber, boolean createIfNotExists) {
         if (rowNumber < 0 || columnNumber < 0) {
             throw new ExcelHandlingException("Can not read cell[" + rowNumber + ", " + columnNumber + "]");

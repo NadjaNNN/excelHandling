@@ -23,11 +23,6 @@ public abstract class ExcelFileReadingTest {
     }
 
     @Test
-    public void numberOfRowsShouldBeTakenFromFile() {
-        assertEquals(3, excelFile.getNumberOfRows());
-    }
-
-    @Test
     public void numberOfSheetsShouldBeTakenFromFile() {
         assertEquals(2, excelFile.getSheetsAmount());
     }
@@ -39,56 +34,56 @@ public abstract class ExcelFileReadingTest {
 
     @Test
     public void formulaShouldBeRead() {
-        Optional<Object> value = excelFile.getCellValue(2, 0);
+        Optional<Object> value = excelFile.getCellValue(3, 0);
         assertTrue(value.isPresent());
         assertEquals(0, Double.compare(20D, ((Double) value.get()).doubleValue()));
     }
 
     @Test
     public void readingOfFormulaWithErrorShouldReturnZero() {
-        Optional<Object> value = excelFile.getCellValue(2, 1);
+        Optional<Object> value = excelFile.getCellValue(3, 1);
         assertTrue(value.isPresent());
         assertEquals(0, Double.compare(0D, ((Double) value.get()).doubleValue()));
     }
 
     @Test
     public void blankTypeCellShouldBeRead() {
-        Optional<Object> value = excelFile.getCellValue(2, 2);
+        Optional<Object> value = excelFile.getCellValue(3, 2);
         assertTrue(value.isPresent());
         assertEquals("blank", value.get());
     }
 
     @Test
     public void stringTypeCellShouldBeRead() {
-        Optional<Object> value = excelFile.getCellValue(2, 3);
+        Optional<Object> value = excelFile.getCellValue(3, 3);
         assertTrue(value.isPresent());
         assertEquals("string", value.get());
     }
 
     @Test
     public void numericTypeCellShouldBeRead() {
-        Optional<Object> value = excelFile.getCellValue(2, 4);
+        Optional<Object> value = excelFile.getCellValue(3, 4);
         assertTrue(value.isPresent());
         assertEquals(0, Double.compare(45D, ((Double) value.get()).doubleValue()));
     }
 
     @Test
     public void booleanTypeCellShouldBeRead() {
-        Optional<Object> value = excelFile.getCellValue(2, 5);
+        Optional<Object> value = excelFile.getCellValue(3, 5);
         assertTrue(value.isPresent());
         assertEquals(true, value.get());
     }
 
     @Test
     public void currencyTypeCellShouldBeRead() {
-        Optional<Object> value = excelFile.getCellValue(2, 6);
+        Optional<Object> value = excelFile.getCellValue(3, 6);
         assertTrue(value.isPresent());
         assertEquals(0, Double.compare(45.5D, ((Double) value.get()).doubleValue()));
     }
 
     @Test
     public void dateTypeCellShouldBeRead() {
-        Optional<Object> value = excelFile.getCellValue(2, 7);
+        Optional<Object> value = excelFile.getCellValue(3, 7);
         assertTrue(value.isPresent());
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy");
         assertEquals("01.02.2020", dateFormat.format(DateUtil.getJavaDate((Double) value.get())));
@@ -103,12 +98,12 @@ public abstract class ExcelFileReadingTest {
     public void getCellValueStringShouldReturnTextForAllTypes() {
         assertEquals("10", excelFile.getCellValueString(0, 0));
         assertEquals("10.5", excelFile.getCellValueString(0, 1));
-        assertEquals("20", excelFile.getCellValueString(2, 0));
-        assertEquals("blank", excelFile.getCellValueString(2, 2));
-        assertEquals("string", excelFile.getCellValueString(2, 3));
-        assertEquals("true", excelFile.getCellValueString(2, 5));
-        assertEquals("45.5", excelFile.getCellValueString(2, 6));
-        assertEquals("43862", excelFile.getCellValueString(2, 7));
+        assertEquals("20", excelFile.getCellValueString(3, 0));
+        assertEquals("blank", excelFile.getCellValueString(3, 2));
+        assertEquals("string", excelFile.getCellValueString(3, 3));
+        assertEquals("true", excelFile.getCellValueString(3, 5));
+        assertEquals("45.5", excelFile.getCellValueString(3, 6));
+        assertEquals("43862", excelFile.getCellValueString(3, 7));
     }
 
     @Test
@@ -127,41 +122,41 @@ public abstract class ExcelFileReadingTest {
     public void getCellValueDoubleShouldReturnValueForNumericalCells() {
         assertEquals(0, Double.compare(10D, excelFile.getCellValueDouble(0, 0).get()));
         assertEquals(0, Double.compare(10.5D, excelFile.getCellValueDouble(0, 1).get()));
-        assertEquals(0, Double.compare(20D, excelFile.getCellValueDouble(2, 0).get()));
-        assertEquals(0, Double.compare(45.5D, excelFile.getCellValueDouble(2, 6).get()));
-        assertEquals(0, Double.compare(43862D, excelFile.getCellValueDouble(2, 7).get()));
+        assertEquals(0, Double.compare(20D, excelFile.getCellValueDouble(3, 0).get()));
+        assertEquals(0, Double.compare(45.5D, excelFile.getCellValueDouble(3, 6).get()));
+        assertEquals(0, Double.compare(43862D, excelFile.getCellValueDouble(3, 7).get()));
     }
 
     @Test
     public void getCellValueDateShouldReturnEmptyForNonNumericalCells() {
-        assertFalse(excelFile.getCellValueDate(2, 2).isPresent());
-        assertFalse(excelFile.getCellValueDate(2, 3).isPresent());
-        assertFalse(excelFile.getCellValueDate(2, 5).isPresent());
+        assertFalse(excelFile.getCellValueDate(3, 2).isPresent());
+        assertFalse(excelFile.getCellValueDate(3, 3).isPresent());
+        assertFalse(excelFile.getCellValueDate(3, 5).isPresent());
     }
 
     @Test
     public void getCellValueDateShouldReturnValueForDateCell() {
         Date value = DateUtil.getJavaDate(43862D);
-        assertTrue(value.equals(excelFile.getCellValueDate(2, 7).get()));
+        assertTrue(value.equals(excelFile.getCellValueDate(3, 7).get()));
     }
 
     @Test
     public void getCellValueBooleanShouldReturnValueForBooleanCell() {
-        assertEquals(true, excelFile.getCellValueBoolean(2, 5).get());
+        assertEquals(true, excelFile.getCellValueBoolean(3, 5).get());
     }
 
     @Test
     public void getCellValueBooleanShouldReturnEmptyForNonBooleanCells() {
-        for(int column = 0; column < excelFile.getLastColumnNumber(2); column ++) {
+        for(int column = 0; column < excelFile.getLastColumnNumber(4); column ++) {
             if (column != 5) {
-                assertFalse(excelFile.getCellValueBoolean(2, column).isPresent());
+                assertFalse(excelFile.getCellValueBoolean(4, column).isPresent());
             }
         }
     }
 
     @Test
     public void lastColumnNumberShouldReturnProperValue() {
-        assertEquals(9, excelFile.getLastColumnNumber(2));
+        assertEquals(9, excelFile.getLastColumnNumber(3));
     }
 
     @Test
@@ -176,7 +171,7 @@ public abstract class ExcelFileReadingTest {
 
     @Test
     public void getCellValueStringShouldReadLongValue() {
-        assertEquals("10203045689", excelFile.getCellValueString(2,8));
+        assertEquals("10203045689", excelFile.getCellValueString(3,8));
     }
 
     @Test
@@ -212,5 +207,10 @@ public abstract class ExcelFileReadingTest {
     @Test
     public void getCurrentSheetIndexShouldBeZero() {
         assertEquals(0, excelFile.getCurrentSheetIndex());
+    }
+
+    @Test
+    public void lastRowIndexShouldBeTakenFromFile() {
+        assertEquals(3, excelFile.getLastRowNum());
     }
 }
